@@ -197,7 +197,8 @@
     <header id="site_header">
         <div class="menu w-50">
             <div class="logo">
-                <h1><?= $title ?></h1>
+                <img src="./assets/img/google4.png" alt="" style="margin-right: 10px;">
+                <span><?= $title ?></span>
                 
             </div>
             <ul class="menu_list">
