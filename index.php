@@ -57,6 +57,12 @@
                 "In alcuni casi sì. Quando fai clic su un risultato della Ricerca Google, il tuo browser web potrebbe reindirizzare alla pagina web di destinazione anche l'indirizzo Internet, o URL, della pagina dei risultati di ricerca sotto forma di <span>URL referrer.</span> Talvolta, l'URL della pagina dei risultati di ricerca potrebbe contenere la query di ricerca che hai inserito. Se utilizzi la ricerca SSL (la funzione di ricerca criptata di Google), nella maggior parte dei casi i termini di ricerca non vengono inviati come parte dell'URL negli URL referrer. Questo comportamento può fare eccezione, ad esempio se utilizzi alcuni browser meno diffusi. Ulteriori informazioni sulla ricerca SSL sono disponibili <span>qui.</span> Le query di ricerca o le informazioni contenute nell'URL referrer potrebbero essere disponibili mediante Google Analytics o un'API (Application Programming Interface). Inoltre, gli inserzionisti potrebbero ricevere informazioni relative all' esatte parole chiave che hanno determinato il clic su un annuncio.",
         ],
     ];
+    $footer_links=[
+        'Google',
+        'Tutto su Google',
+        'Privacy',
+        'Termini',
+    ];
 ?>
 
 
@@ -82,6 +88,7 @@
         }
         body{
             background-color: #FFFFFF;
+            font-family: 'Roboto',arial,sans-serif;
         }
         #site_header{
             height: 80px;
@@ -99,16 +106,20 @@
             display: flex;
             align-items: center;
         }
-        .menu_list{
+        .menu_list,
+        .menu_footer{
             list-style: none;
             display: flex;
             height: 100%;
         }
-        .menu_list li{
+        .menu_list li,
+        .menu_footer li{
             margin: 0px 20px 0px 0px;
         }
         
-        .menu_list li a{
+        .menu_list li a,
+        .menu_footer li a{
+        
             text-decoration: none;
             color: grey;
             padding-bottom: 4px;
@@ -117,7 +128,8 @@
             color: #3367D6;
             border-bottom: 4px solid #3367D6;
         }
-        #site_main{
+        #site_main,
+        #site_footer{
             max-width: 978px;
             margin: 0 auto;
         }
@@ -133,7 +145,6 @@
         #site_main p{ 
             margin: 10px 0;
             color: rgba(0,0,0,0.87);
-            font-family: 'Roboto',arial,sans-serif;
             font-size: 14px;
             font-weight: 400;
             line-height: 24px;
@@ -141,16 +152,44 @@
         }
         p span{
             color: #3367D6;
+            cursor: pointer;
         }
         #site_footer{
             height: 40px;
-            width: 100vw;
             background-color: #F5F5F5;
+            display: flex;
+            justify-content: space-between;
+        }
+        .item_footer{
+            color: rgba(61,61,61,.8);
+            padding-top: 10px;
         }
         /* common rules */
         .w-50{
             width: calc(100% / 2);
         }
+        select {
+            margin-top: 10px;
+            border-color: black;
+            line-height: normal;
+            white-space: nowrap !important;
+            word-wrap: normal !important;
+            cursor: default;
+            box-sizing: border-box;
+            user-select: none;
+            border-width: 2px;
+            border-style: inset;
+            overflow: clip;
+            display: inline-block;
+            page-break-inside: avoid;
+            overflow-clip-box: padding-box !important;
+            padding-block: 1px;
+            background-color: -moz-Combobox;
+            color: -moz-ComboboxText;
+            vertical-align: baseline;
+            appearance: auto;
+
+            }
         
     </style>
 </head>
@@ -183,7 +222,77 @@
     </main>
     <!-- /#site_main -->
     <footer id="site_footer">
-        footer
+        <ul class="menu_footer ">
+            <?php for ($i=0; $i < count($footer_links); $i++) { ?>
+                <li class="item_footer"><a href="#"></a><?= $footer_links[$i]; ?></li>
+            <?php } ?>
+        </ul>
+        <div class="languages">
+            <select class="iCthae" id="i3" jsname="O1htCb">
+                <option value="af">Afrikaans</option>
+                <option value="id">Bahasa Indonesia</option>
+                <option value="ms">Bahasa Melayu</option>
+                <option value="ca">Català</option>
+                <option value="cs">Čeština</option>
+                <option value="da">Dansk</option>
+                <option value="de">Deutsch</option>
+                <option value="et">Eesti</option>
+                <option value="en">English</option>
+                <option value="en-GB">English (United Kingdom)</option>
+                <option value="es">Español</option>
+                <option value="es-419">Español (Latinoamérica)</option>
+                <option value="eu">Euskara</option>
+                <option value="fil">Filipino</option>
+                <option value="fr">Français</option>
+                <option value="fr-CA">Français (Canada)</option>
+                <option value="gl">Galego</option>
+                <option value="hr">Hrvatski</option>
+                <option value="zu">Isizulu</option>
+                <option value="is">Íslenska</option>
+                <option selected="" value="it">Italiano</option>
+                <option value="sw">Kiswahili</option>
+                <option value="lv">Latviešu</option>
+                <option value="lt">Lietuvių</option>
+                <option value="hu">Magyar</option>
+                <option value="nl">Nederlands</option>
+                <option value="no">Norsk</option>
+                <option value="pl">Polski</option>
+                <option value="pt-BR">Português (Brasil)</option>
+                <option value="pt-PT">Português (Portugal)</option>
+                <option value="ro">Română</option>
+                <option value="sk">Slovenčina</option>
+                <option value="sl">Slovenščina</option>
+                <option value="sr-Latn">Srpski</option>
+                <option value="fi">Suomi</option>
+                <option value="sv">Svenska</option>
+                <option value="vi">Tiếng Việt</option>
+                <option value="tr">Türkçe</option>
+                <option value="el">Ελληνικά</option>
+                <option value="bg">Български</option>
+                <option value="ru">Русский</option>
+                <option value="sr">Српски</option>
+                <option value="uk">Українська</option>
+                <option value="iw">‫עברית‬</option>
+                <option value="ur">‫اردو‬</option>
+                <option value="ar">‫العربية‬</option>
+                <option value="fa">‫فارسی‬</option>
+                <option value="am">አማርኛ</option>
+                <option value="mr">मराठी</option>
+                <option value="hi">हिन्दी</option>
+                <option value="bn">বাংলা</option>
+                <option value="gu">ગુજરાતી</option>
+                <option value="ta">தமிழ்</option>
+                <option value="te">తెలుగు</option>
+                <option value="kn">ಕನ್ನಡ</option>
+                <option value="ml">മലയാളം</option>
+                <option value="th">ไทย</option>
+                <option value="ko">한국어</option>
+                <option value="zh-HK">中文 (香港)</option>
+                <option value="zh-CN">中文（简体中文）</option>
+                <option value="zh-TW">中文（繁體中文）</option>
+                <option value="ja">日本語</option>
+            </select>
+        </div>
     </footer>
     <!-- /#site_footer -->
 </body>
