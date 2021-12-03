@@ -211,7 +211,12 @@
                 
             </ul>
         </div>
-        <div class="menu w-50"></div>
+        <div class="menu w-50 user" style="display:flex; justify-content:end; align-items:center;">
+                <a href="#"><img src="./assets/img/grid-dot3x3.svg" alt="" style="margin: 0px 10px; width:30px; height:30px;"></a>
+                <a href="#"><img src="./assets/img/user-circle-solid.svg" alt="" style="margin: 0px 10px; width:30px; height:30px;"></a>
+            
+
+        </div>
 
     </header>
     <!-- /#site_header -->
@@ -223,7 +228,7 @@
     </main>
     <!-- /#site_main -->
     <footer id="site_footer">
-        <ul class="menu_footer ">
+        <ul class="menu_footer">
             <?php for ($i=0; $i < count($footer_links); $i++) { ?>
                 <li class="item_footer"><a href="#"></a><?= $footer_links[$i]; ?></li>
             <?php } ?>
