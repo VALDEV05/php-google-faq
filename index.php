@@ -1,3 +1,29 @@
+<?php
+   $title = 'Logo Privacy e termini';
+   $items_menu = [
+       [
+        'link' => 'Introduzione',
+        'active' => false,
+        ],
+        [
+        'link' => 'Norme sulla privacy',
+        'active' => false,
+        ],
+        [
+        'link' => 'Termini di servizio',
+        'active' => false,
+        ],
+        [
+        'link' => 'Tecnologie',
+        'active' => false,
+        ],
+        [
+        'link' => 'Domande frequenti',
+        'active' => true,
+        ],
+   ];
+?>
+
 
 
 
@@ -49,7 +75,7 @@
         color: grey;
         padding-bottom: 4px;
     }
-    .menu_list li a.active{
+    a.active{
         color: blue;
         border-bottom: 4px solid blue;
     }
@@ -71,15 +97,17 @@
     <header id="site_header">
         <div class="menu w-50">
             <div class="logo">
-                <h1>Logo Privacy e termini</h1>
+                <h1><?= $title ?></h1>
                 
             </div>
             <ul class="menu_list">
-                <li><a href="#">Introduzione</a></li>
-                <li><a href="#">Norme sulla privacy</a></li>
-                <li><a href="#">Termini di servizio</a></li>
-                <li><a href="#">Tecnologie</a></li>
-                <li><a class=".active" href="#">Domande frequenti</a></li>
+                <?php foreach ($items_menu as $item_menu) : 
+                    $active = $item_menu['active']; ?> 
+                    <li><a href="#" class="<?= $active === true ? 'active': 'link';?>">
+                        <?= $item_menu['link']; ?>
+                    </a></li>
+                <?php endforeach;?>
+                
             </ul>
         </div>
         <div class="menu w-50"></div>
